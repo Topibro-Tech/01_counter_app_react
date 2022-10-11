@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [getCount, setCount] = useState(0);
+  const handleIncrement = () => {
+    setCount(getCount + 1);
+  };
+
+  const handleDecrement = () => {
+    setCount(getCount - 1);
+  };
+  console.log('Page refreshed');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <h1>Hello StackBlitz!</h1>
+      <p>Start editing to see some magic happen :)</p> */}
+
+      <h1>Count</h1>
+      <button onClick={handleIncrement}>+</button>
+      <br />
+      <p>{getCount}</p>
+      <br />
+      <button onClick={handleDecrement}>-</button>
     </div>
   );
 }
